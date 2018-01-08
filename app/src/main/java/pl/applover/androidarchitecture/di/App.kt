@@ -1,11 +1,11 @@
 package pl.applover.androidarchitecture.di
 
 import android.app.Activity
-import android.app.Application
 import android.support.multidex.MultiDexApplication
-import pl.applover.androidarchitecture.di.components.DaggerAppComponent
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasDispatchingActivityInjector
+import pl.applover.androidarchitecture.di.components.DaggerAppComponent
+import pl.applover.androidarchitecture.util.DelegatesExt
 import javax.inject.Inject
 
 /**
@@ -17,6 +17,9 @@ class App : MultiDexApplication(), HasDispatchingActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
+
+
         DaggerAppComponent
                 .builder()
                 .application(this)
@@ -26,5 +29,9 @@ class App : MultiDexApplication(), HasDispatchingActivityInjector {
 
     override fun activityInjector(): DispatchingAndroidInjector<Activity> {
         return dispatchingAndroidInjector
+    }
+
+    companion object {
+        var instance: App by DelegatesExt.notNullSingleValue()
     }
 }
