@@ -5,7 +5,7 @@ import android.support.multidex.MultiDexApplication
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasDispatchingActivityInjector
 import pl.applover.androidarchitecture.di.components.DaggerAppComponent
-import pl.applover.androidarchitecture.util.DelegatesExt
+import pl.applover.androidarchitecture.util.extensions.DelegatesExt
 import javax.inject.Inject
 
 /**
@@ -18,8 +18,7 @@ class App : MultiDexApplication(), HasDispatchingActivityInjector {
     override fun onCreate() {
         super.onCreate()
         instance = this
-
-
+        
         DaggerAppComponent
                 .builder()
                 .application(this)

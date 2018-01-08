@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.util
+package pl.applover.androidarchitecture.util.extensions
 
 import kotlin.reflect.KProperty
 

@@ -45,4 +45,7 @@ dependencies {
     compile 'com.github.stfalcon:mvphelper:0.2.1'
 
     compile 'com.android.support:multidex:1.0.2'
+
+
+    implementation "com.nihaskalam.android:progress-button:1.0.1"
 }
