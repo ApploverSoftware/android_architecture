@@ -9,7 +9,7 @@ import pl.applover.androidarchitecture.di.App
 /**
  * Created by kroll on 9/27/17.
  */
-class IsInternetAvailable() {
+open class IsInternetAvailable() {
 
     //Let you set internet status change listeners, onConnect and onDisconnect, for more informations check https://github.com/novoda/merlin
     fun buildMerlin(context: Context = App.instance): Merlin {

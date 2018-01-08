@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.os.Handler
 import android.os.Looper
@@ -159,5 +160,11 @@ fun CircularProgressButton.stop(success: Boolean, resetTimeout: Long? = 1000, co
             } ?: setClickable(true)
         }
     }
+}
+
+fun View.getRect(): Rect {
+    val rect: Rect = Rect()
+    getGlobalVisibleRect(rect)
+    return rect
 }
 

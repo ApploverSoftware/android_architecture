@@ -2,7 +2,7 @@ package pl.applover.androidarchitecture.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import pl.applover.dateanddrive.MainApp
+import pl.applover.androidarchitecture.di.App
 
 /**
  * Created by Janusz Hain on 05/07/2017.
@@ -17,7 +17,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun setIntToSharedPreferences(key: String, value: Int, context: Context = MainApp.instance) {
+    fun setIntToSharedPreferences(key: String, value: Int, context: Context = App.instance) {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putInt(key, value)
@@ -29,7 +29,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun getIntFromSharedPreferences(key: String, defaultValue: Int, context: Context = MainApp.instance): Int {
+    fun getIntFromSharedPreferences(key: String, defaultValue: Int, context: Context = App.instance): Int {
         val sharedPreferences = getSharedPreferences(context)
         return sharedPreferences.getInt(key, defaultValue)
     }
@@ -39,7 +39,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun setDoubleToSharedPreferences(key: String, value: Double, context: Context = MainApp.instance) {
+    fun setDoubleToSharedPreferences(key: String, value: Double, context: Context = App.instance) {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putString(key, value.toString())
@@ -51,7 +51,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun getDoubleFromSharedPreferences(key: String, defaultValue: Double, context: Context = MainApp.instance): Double {
+    fun getDoubleFromSharedPreferences(key: String, defaultValue: Double, context: Context = App.instance): Double {
         val sharedPreferences = getSharedPreferences(context)
         return (sharedPreferences.getString(key, defaultValue.toString())).toDouble()
     }
@@ -61,7 +61,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun setStringToSharedPreferences(key: String, value: String, context: Context = MainApp.instance) {
+    fun setStringToSharedPreferences(key: String, value: String, context: Context = App.instance) {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putString(key, value)
@@ -73,7 +73,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun getStringFromSharedPreferences(key: String, defaultValue: String, context: Context = MainApp.instance): String {
+    fun getStringFromSharedPreferences(key: String, defaultValue: String, context: Context = App.instance): String {
         val sharedPreferences = getSharedPreferences(context)
         return sharedPreferences.getString(key, defaultValue)
     }
@@ -83,7 +83,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun setBooleanToSharedPreferences(key: String, value: Boolean, context: Context = MainApp.instance) {
+    fun setBooleanToSharedPreferences(key: String, value: Boolean, context: Context = App.instance) {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putBoolean(key, value)
@@ -94,7 +94,7 @@ object MySharedPreferencesUtil {
      * Gets boolean from SharedPreferences
      * Default context is Application context
      */
-    fun getBooleanFromSharedPreferences(key: String, defaultValue: Boolean, context: Context = MainApp.instance): Boolean {
+    fun getBooleanFromSharedPreferences(key: String, defaultValue: Boolean, context: Context = App.instance): Boolean {
         val sharedPreferences = getSharedPreferences(context)
         return sharedPreferences.getBoolean(key, defaultValue)
     }
@@ -104,7 +104,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun removeFromSharedPreferences(key: String, context: Context = MainApp.instance) {
+    fun removeFromSharedPreferences(key: String, context: Context = App.instance) {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.remove(key)
@@ -116,7 +116,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun getSharedPreferences(context: Context = MainApp.instance): SharedPreferences {
+    fun getSharedPreferences(context: Context = App.instance): SharedPreferences {
         return context.getSharedPreferences(
                 packageName, Context.MODE_PRIVATE)
     }
@@ -126,7 +126,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun setStringSetToSharedPreferences(key: String, value: Set<String>, context: Context = MainApp.instance) {
+    fun setStringSetToSharedPreferences(key: String, value: Set<String>, context: Context = App.instance) {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putStringSet(key, value)
@@ -138,7 +138,7 @@ object MySharedPreferencesUtil {
      *
      * Default context is Application context
      */
-    fun getStringSetFromSharedPreferences(key: String, defaultValue: Set<String>, context: Context = MainApp.instance): Set<String> {
+    fun getStringSetFromSharedPreferences(key: String, defaultValue: Set<String>, context: Context = App.instance): Set<String> {
         val sharedPreferences = getSharedPreferences(context)
         return sharedPreferences.getStringSet(key, defaultValue)
     }

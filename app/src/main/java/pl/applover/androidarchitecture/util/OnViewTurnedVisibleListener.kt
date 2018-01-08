@@ -3,6 +3,7 @@ package pl.applover.androidarchitecture.util
 import android.view.View
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
+import pl.applover.androidarchitecture.util.ui.getRect
 import java.util.concurrent.TimeUnit
 
 
