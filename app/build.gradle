@@ -24,6 +24,7 @@ android {
 }
 
 apply plugin: 'kotlin-kapt'
+apply plugin: "io.mironov.smuggler"
 
 dependencies {
 
@@ -35,16 +36,35 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
+    //noinspection GradleDependency
     implementation "com.google.dagger:dagger:2.10"
+    //noinspection GradleDependency
     kapt  "com.google.dagger:dagger-compiler:2.10"
+    //noinspection GradleDependency
     implementation "com.google.dagger:dagger-android:2.10"
+    //noinspection GradleDependency
     kapt  "com.google.dagger:dagger-android-processor:2.10"
+    //noinspection GradleDependency
     implementation "com.google.dagger:dagger-android-support:2.10"
+    //noinspection GradleDependency
     kapt  "com.google.dagger:dagger-android-support:2.10"
 
     compile 'com.github.stfalcon:mvphelper:0.2.1'
 
     compile 'com.android.support:multidex:1.0.2'
+
+    //Merlin - network status monitoring
+    compile 'com.novoda:merlin:1.1.5'
+    compile 'com.novoda:merlin-rxjava2:1.1.5'
+
+    //RETROFIT and RxJava
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:converter-moshi:2.0.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
 
 
     implementation "com.nihaskalam.android:progress-button:1.0.1"

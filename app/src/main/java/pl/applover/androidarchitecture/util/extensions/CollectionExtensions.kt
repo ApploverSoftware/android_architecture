@@ -1,5 +1,7 @@
 package pl.applover.androidarchitecture.util.extensions
 
+import java.util.HashMap
+
 /**
  * Created by Janusz Hain on 2018-01-08.
  */
@@ -20,5 +22,18 @@ fun <T> MutableIterator<T>.removeAll(condition: (value: T) -> Boolean) {
         if (condition(value)) {
             remove()
         }
+    }
+}
+
+/**
+ * @return Object [V] under [key] if exists or null if put successful
+ */
+fun <K, V> HashMap<K, V>.putIfNotExists(key: K, value: V): V? {
+    val valueUnderKey = get(key)
+    if (valueUnderKey == null) {
+        put(key, value)
+        return null
+    } else {
+        return valueUnderKey
     }
 }

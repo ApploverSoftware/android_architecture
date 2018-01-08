@@ -18,7 +18,7 @@ class App : MultiDexApplication(), HasDispatchingActivityInjector {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        
+
         DaggerAppComponent
                 .builder()
                 .application(this)
