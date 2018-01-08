@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.view_presenters
+package pl.applover.androidarchitecture.view_presenters.main
 
 import com.stfalcon.mvphelper.Presenter
 import javax.inject.Inject
@@ -6,10 +6,10 @@ import javax.inject.Inject
 /**
  * Created by Janusz Hain on 2018-01-08.
  */
-class StartActivityPresenter @Inject constructor()
-    : Presenter<StartActivityContract.View>(), StartActivityContract.Presenter {
+class MainActivityPresenter @Inject constructor()
+    : Presenter<MainActivityContract.View>(), MainActivityContract.Presenter {
 
-    override fun onViewAttached(view: StartActivityContract.View, created: Boolean) {
+    override fun onViewAttached(view: MainActivityContract.View, created: Boolean) {
         super.onViewAttached(view, created)
     }
 

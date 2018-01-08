@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.view_presenters
+package pl.applover.androidarchitecture.view_presenters.start
 
 import dagger.Subcomponent
 import dagger.android.AndroidInjector

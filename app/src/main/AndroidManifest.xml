@@ -10,13 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view_presenters.StartActivity">
+        <activity android:name=".view_presenters.start.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="pl.applover.androidarchitecture.view_presenters.main.MainActivity" />
     </application>
 
 </manifest>

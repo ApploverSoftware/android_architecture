@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.view_presenters
+package pl.applover.androidarchitecture.view_presenters.start
 
 import android.content.Context
 import com.stfalcon.mvphelper.PresenterLoader
