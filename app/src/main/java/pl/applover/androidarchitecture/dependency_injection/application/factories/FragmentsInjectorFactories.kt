@@ -9,8 +9,8 @@ import dagger.android.AndroidInjector
 import dagger.android.support.FragmentKey
 
 import dagger.multibindings.IntoMap
-import pl.applover.androidarchitecture.view_presenters.start.start_fragment.StartFragment
-import pl.applover.androidarchitecture.view_presenters.start.start_fragment.StartFragmentSubComponent
+import pl.applover.androidarchitecture.views_presenters.start.start_fragment.StartFragment
+import pl.applover.androidarchitecture.views_presenters.start.start_fragment.StartFragmentSubComponent
 
 
 /**

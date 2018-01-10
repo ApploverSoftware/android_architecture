@@ -1,11 +1,11 @@
-package pl.applover.androidarchitecture.view_presenters.example.main
+package pl.applover.androidarchitecture.views_presenters.start
 
 import com.stfalcon.mvphelper.IPresenter
 
 /**
  * Created by Janusz Hain on 2018-01-08.
  */
-interface ExampleMainActivityContract {
+interface StartActivityContract {
 
     interface View {
 

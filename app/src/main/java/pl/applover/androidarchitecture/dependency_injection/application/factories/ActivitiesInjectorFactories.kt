@@ -6,10 +6,10 @@ import dagger.Module
 import dagger.android.ActivityKey
 import dagger.android.AndroidInjector
 import dagger.multibindings.IntoMap
-import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivity
-import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivitySubComponent
-import pl.applover.androidarchitecture.view_presenters.start.StartActivity
-import pl.applover.androidarchitecture.view_presenters.start.StartActivitySubComponent
+import pl.applover.androidarchitecture.views_presenters.example.main.ExampleMainActivity
+import pl.applover.androidarchitecture.views_presenters.example.main.ExampleMainActivitySubComponent
+import pl.applover.androidarchitecture.views_presenters.start.StartActivity
+import pl.applover.androidarchitecture.views_presenters.start.StartActivitySubComponent
 
 /**
  * Created by Janusz Hain on 2018-01-08.

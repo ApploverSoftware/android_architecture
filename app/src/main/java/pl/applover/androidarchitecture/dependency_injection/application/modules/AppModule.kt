@@ -4,8 +4,8 @@ import android.content.Context
 import pl.applover.androidarchitecture.App
 import dagger.Module
 import dagger.Provides
-import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivitySubComponent
-import pl.applover.androidarchitecture.view_presenters.start.StartActivitySubComponent
+import pl.applover.androidarchitecture.views_presenters.example.main.ExampleMainActivitySubComponent
+import pl.applover.androidarchitecture.views_presenters.start.StartActivitySubComponent
 import javax.inject.Singleton
 
 /**

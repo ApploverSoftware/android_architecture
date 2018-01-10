@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.view_presenters.start.start_fragment
+package pl.applover.androidarchitecture.views_presenters.start.start_fragment
 
 import pl.applover.androidarchitecture.R
 import com.stfalcon.mvphelper.MvpFragment

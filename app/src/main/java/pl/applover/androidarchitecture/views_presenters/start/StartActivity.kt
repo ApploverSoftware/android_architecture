@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.view_presenters.start
+package pl.applover.androidarchitecture.views_presenters.start
 
 import pl.applover.androidarchitecture.R
 import com.stfalcon.mvphelper.MvpActivity
