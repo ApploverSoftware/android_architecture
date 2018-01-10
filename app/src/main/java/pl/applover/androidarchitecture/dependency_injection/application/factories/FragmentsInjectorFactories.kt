@@ -17,7 +17,7 @@ import pl.applover.androidarchitecture.views_presenters.start.start_fragment.Sta
  * Created by Janusz Hain on 2018-01-08.
  */
 @Module(subcomponents = arrayOf(
-//        register your fragments' subcomponents here
+//TODO        register your fragments' subcomponents here
         StartFragmentSubComponent::class
 
 ))

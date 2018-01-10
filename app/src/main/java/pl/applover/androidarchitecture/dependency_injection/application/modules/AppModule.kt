@@ -12,7 +12,7 @@ import javax.inject.Singleton
  * Created by Janusz Hain on 2018-01-08.
  */
 @Module(subcomponents = arrayOf(
-//        register your activities' subcomponents here
+//TODO        register your activities' subcomponents here
         StartActivitySubComponent::class,
         ExampleMainActivitySubComponent::class
 
