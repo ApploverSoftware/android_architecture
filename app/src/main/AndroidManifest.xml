@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="pl.applover.androidarchitecture.view_presenters.main.MainActivity" />
+        <activity android:name="pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivity" />
     </application>
 
 </manifest>

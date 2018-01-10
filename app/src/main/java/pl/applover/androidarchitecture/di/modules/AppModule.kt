@@ -4,7 +4,7 @@ import android.content.Context
 import pl.applover.androidarchitecture.di.App
 import dagger.Module
 import dagger.Provides
-import pl.applover.androidarchitecture.view_presenters.main.MainActivitySubComponent
+import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivitySubComponent
 import pl.applover.androidarchitecture.view_presenters.start.StartActivitySubComponent
 import javax.inject.Singleton
 
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Module(subcomponents = arrayOf(
 //        register your activities' subcomponents here
         StartActivitySubComponent::class,
-        MainActivitySubComponent::class
+        ExampleMainActivitySubComponent::class
 
 ))
 class AppModule {

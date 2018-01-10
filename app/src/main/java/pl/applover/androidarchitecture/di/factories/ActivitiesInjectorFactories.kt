@@ -6,8 +6,8 @@ import dagger.Module
 import dagger.android.ActivityKey
 import dagger.android.AndroidInjector
 import dagger.multibindings.IntoMap
-import pl.applover.androidarchitecture.view_presenters.main.MainActivity
-import pl.applover.androidarchitecture.view_presenters.main.MainActivitySubComponent
+import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivity
+import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivitySubComponent
 import pl.applover.androidarchitecture.view_presenters.start.StartActivity
 import pl.applover.androidarchitecture.view_presenters.start.StartActivitySubComponent
 
@@ -27,7 +27,7 @@ abstract class ActivitiesInjectorFactories {
 
     @Binds
     @IntoMap
-    @ActivityKey(MainActivity::class)
+    @ActivityKey(ExampleMainActivity::class)
     internal abstract fun bindMainActivityInjectorFactory(
-            builder: MainActivitySubComponent.Builder): AndroidInjector.Factory<out Activity>
+            builder: ExampleMainActivitySubComponent.Builder): AndroidInjector.Factory<out Activity>
 }
