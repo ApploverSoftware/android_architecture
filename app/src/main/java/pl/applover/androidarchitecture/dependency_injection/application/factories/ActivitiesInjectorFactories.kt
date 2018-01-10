@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.di.factories
+package pl.applover.androidarchitecture.dependency_injection.application.factories
 
 import android.app.Activity
 import dagger.Binds

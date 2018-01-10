@@ -1,9 +1,9 @@
-package pl.applover.androidarchitecture.di.components
+package pl.applover.androidarchitecture.dependency_injection.application.components
 
-import pl.applover.androidarchitecture.di.App
-import pl.applover.androidarchitecture.di.factories.ActivitiesInjectorFactories
-import pl.applover.androidarchitecture.di.factories.FragmentsInjectorFactories
-import pl.applover.androidarchitecture.di.modules.AppModule
+import pl.applover.androidarchitecture.App
+import pl.applover.androidarchitecture.dependency_injection.application.factories.ActivitiesInjectorFactories
+import pl.applover.androidarchitecture.dependency_injection.application.factories.FragmentsInjectorFactories
+import pl.applover.androidarchitecture.dependency_injection.application.modules.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule

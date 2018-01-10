@@ -1,7 +1,7 @@
-package pl.applover.androidarchitecture.di.modules
+package pl.applover.androidarchitecture.dependency_injection.application.modules
 
 import android.content.Context
-import pl.applover.androidarchitecture.di.App
+import pl.applover.androidarchitecture.App
 import dagger.Module
 import dagger.Provides
 import pl.applover.androidarchitecture.view_presenters.example.main.ExampleMainActivitySubComponent

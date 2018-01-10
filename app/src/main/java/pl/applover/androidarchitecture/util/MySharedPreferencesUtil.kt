@@ -2,7 +2,7 @@ package pl.applover.androidarchitecture.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import pl.applover.androidarchitecture.di.App
+import pl.applover.androidarchitecture.App
 
 /**
  * Created by Janusz Hain on 05/07/2017.

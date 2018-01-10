@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.di.internet.example
+package pl.applover.androidarchitecture.dependency_injection.internet.example
 
 import java.util.concurrent.TimeUnit
 

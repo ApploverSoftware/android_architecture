@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import pl.applover.androidarchitecture.di.App
+import pl.applover.androidarchitecture.App
 import java.util.concurrent.TimeUnit
 
 /**

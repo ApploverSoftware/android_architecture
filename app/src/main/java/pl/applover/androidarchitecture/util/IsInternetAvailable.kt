@@ -3,7 +3,7 @@ package pl.applover.androidarchitecture.util
 import android.content.Context
 import com.novoda.merlin.Merlin
 import com.novoda.merlin.MerlinsBeard
-import pl.applover.androidarchitecture.di.App
+import pl.applover.androidarchitecture.App
 
 
 /**

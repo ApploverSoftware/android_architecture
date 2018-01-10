@@ -1,10 +1,13 @@
-package pl.applover.androidarchitecture.di
+package pl.applover.androidarchitecture
 
 import android.app.Activity
 import android.support.multidex.MultiDexApplication
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasDispatchingActivityInjector
-import pl.applover.androidarchitecture.di.components.DaggerAppComponent
+import pl.applover.androidarchitecture.dependency_injection.application.components.DaggerAppComponent
+import pl.applover.androidarchitecture.dependency_injection.internet.example.DaggerExampleNetComponent
+import pl.applover.androidarchitecture.dependency_injection.internet.example.ExampleNetComponent
+import pl.applover.androidarchitecture.dependency_injection.internet.example.ExampleNetModule
 import pl.applover.androidarchitecture.util.extensions.DelegatesExt
 import javax.inject.Inject
 
@@ -14,6 +17,12 @@ import javax.inject.Inject
 class App : MultiDexApplication(), HasDispatchingActivityInjector {
 
     @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+
+    val netLoginComponent: ExampleNetComponent by lazy {
+        DaggerExampleNetComponent.builder()
+                .exampleNetModule(ExampleNetModule())
+                .build();
+    }
 
     override fun onCreate() {
         super.onCreate()
