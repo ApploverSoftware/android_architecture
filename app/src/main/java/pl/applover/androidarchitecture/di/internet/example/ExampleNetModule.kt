@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.example.interactors
+package pl.applover.androidarchitecture.di.internet.example
 
 import java.util.concurrent.TimeUnit
 
