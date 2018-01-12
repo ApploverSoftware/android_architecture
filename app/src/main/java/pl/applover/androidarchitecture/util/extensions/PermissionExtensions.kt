@@ -1,4 +1,4 @@
-package pl.applover.androidarchitecture.util.permissions
+package pl.applover.androidarchitecture.util.extensions
 
 import android.Manifest
 import android.app.Activity
@@ -10,13 +10,12 @@ import android.support.v4.app.ActivityCompat
  */
 
 fun checkPermissionGPSAndRequestIfNotGranted(activity: Activity) {
-    // Here, thisActivity is the current activity
-    if (!checkPermissionGPS(activity)) {
+    if (!isGPSPermissionGranted(activity)) {
         requestPermissionsGPS(activity)
     }
 }
 
-fun checkPermissionGPS(activity: Activity): Boolean {
+fun isGPSPermissionGranted(activity: Activity): Boolean {
     return ActivityCompat.checkSelfPermission(activity,
             Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(activity,
