@@ -56,8 +56,6 @@ dependencies {
 
     compile "com.github.stfalcon:mvphelper:0.2.1"
 
-    compile "com.android.support:multidex:1.0.2"
-
     //Merlin - network status monitoring
     compile "com.novoda:merlin:$merlinVersion"
     compile "com.novoda:merlin-rxjava2:$merlinVersion"
