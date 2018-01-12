@@ -71,7 +71,5 @@ dependencies {
     compile "io.reactivex.rxjava2:rxkotlin:2.1.0"
     compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
-
-
     implementation "com.nihaskalam.android:progress-button:1.0.1"
 }
