@@ -16,7 +16,7 @@ import java.util.HashMap
  * || meal.requestedUsers.containsKey(User.current!!.id)
  * })
  */
-fun <T> MutableIterator<T>.removeAll(condition: (value: T) -> Boolean) {
+fun <T : Any> MutableIterator<T>.removeAll(condition: (value: T) -> Boolean) {
     while (hasNext()) {
         val value = next()
         if (condition(value)) {
@@ -28,7 +28,7 @@ fun <T> MutableIterator<T>.removeAll(condition: (value: T) -> Boolean) {
 /**
  * @return Object [V] under [key] if exists or null if put successful
  */
-fun <K, V> HashMap<K, V>.putIfNotExists(key: K, value: V): V? {
+fun <K: Any, V: Any> HashMap<K, V>.putIfNotExists(key: K, value: V): V? {
     val valueUnderKey = get(key)
     if (valueUnderKey == null) {
         put(key, value)
