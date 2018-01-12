@@ -11,7 +11,7 @@ import retrofit2.http.Query
  * Created by Janusz Hain on 2018-01-12.
  */
 
-interface ExampleApiEndpointInterface {
+interface ExampleApiEndpointsInterface {
 
     /*
     @POST("/api/v1/events")
@@ -43,8 +43,8 @@ interface ExampleApiEndpointInterface {
 
 
     @GET("/posts")
-    fun getEvents(
-            @Header("Content-Type") contentType: String,
-            @Query("userId") userId: Int
+    fun getExampleList(
+            @Header("Content-Type") contentType: String = "application/json",
+            @Query("userId") userId: String
     ): Observable<Response<List<ExampleResponse>>>
 }

@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 class ExampleNetModule {
-    internal var webServiceUrl = "http://go.wroclaw.pl/"
+    internal var webServiceUrl = "https://jsonplaceholder.typicode.com/"
     private val timeoutInSec = 10
 
     @Provides
