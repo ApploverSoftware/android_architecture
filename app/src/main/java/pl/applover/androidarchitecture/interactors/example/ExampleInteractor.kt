@@ -1,6 +1,7 @@
 package pl.applover.androidarchitecture.interactors.example
 
 import io.reactivex.Observable
+import io.reactivex.disposables.Disposable
 import pl.applover.androidarchitecture.App
 import pl.applover.androidarchitecture.data.example.internet.api_endpoints.ExampleApiEndpointsInterface
 import pl.applover.androidarchitecture.data.example.internet.headers.ExampleHeaders
@@ -19,16 +20,22 @@ class ExampleInteractor() {
     @Inject
     lateinit var retrofit: Retrofit //todo make Application inject retrofit
 
+    private var disposable: Disposable? = null
+
     init {
         injectDependencies()
     }
 
     fun execute(onSuccess: (exampleModel: ExampleModel) -> Unit, onFailure: () -> Unit, exampleHeaders: ExampleHeaders, exampleParams: ExampleParams) {
-        getObservable(retrofit, exampleHeaders, exampleParams)
+        disposable = getObservable(retrofit, exampleHeaders, exampleParams).subscribe();
     }
 
     private fun injectDependencies() {
         App.instance.netLoginComponent.inject(this)
+    }
+
+    private fun unsubscribe(){
+        disposable?.dispose()
     }
 
     companion object {
