@@ -10,7 +10,7 @@ import pl.applover.androidarchitecture.App
 
 object MySharedPreferencesUtil {
 
-    private val packageName: String = "pl.applover.dateanddrive"
+    private val packageName: String = App.instance.packageName
 
     /**
      * Saves int to SharedPreferences
