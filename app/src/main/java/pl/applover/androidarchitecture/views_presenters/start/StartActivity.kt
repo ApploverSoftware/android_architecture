@@ -1,5 +1,7 @@
 package pl.applover.androidarchitecture.views_presenters.start
 
+import android.os.Bundle
+import android.os.PersistableBundle
 import pl.applover.androidarchitecture.R
 import com.stfalcon.mvphelper.MvpActivity
 
@@ -11,4 +13,8 @@ class StartActivity : MvpActivity<StartActivityContract.Presenter, StartActivity
 
     override fun getLayoutResId(): Int = R.layout.activity_start
 
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        
+    }
 }

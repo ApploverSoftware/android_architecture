@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 /**
  * Created by Janusz Hain on 2018-01-10.
  */
-class ExampleInteractor(val retrofit: Retrofit) {
+class ExampleInteractor(private val retrofit: Retrofit) {
 
     private var disposable: Disposable? = null
 
@@ -22,7 +22,7 @@ class ExampleInteractor(val retrofit: Retrofit) {
         disposable = getObservable(retrofit, exampleHeaders, exampleParams).subscribe();
     }
 
-    private fun unsubscribe() {
+    fun unsubscribe() {
         disposable?.dispose()
     }
 

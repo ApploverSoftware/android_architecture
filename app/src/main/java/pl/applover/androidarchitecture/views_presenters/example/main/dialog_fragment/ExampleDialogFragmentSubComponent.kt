@@ -11,10 +11,4 @@ interface ExampleDialogFragmentSubComponent : AndroidInjector<ExampleDialogFragm
 
     @Subcomponent.Builder
     abstract class Builder : AndroidInjector.Builder<ExampleDialogFragment>()
-
-    //TODO REMINDER: move the line below to FragmentsInjectorFactories's @Module(...) annotation
-    //ExampleDialogFragmentSubComponent::class
-
-    //TODO REMINDER: move this to FragmentsInjectorFactories module
-
 }
