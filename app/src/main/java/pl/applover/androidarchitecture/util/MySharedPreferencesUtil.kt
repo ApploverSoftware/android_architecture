@@ -10,7 +10,7 @@ import pl.applover.androidarchitecture.App
 
 object MySharedPreferencesUtil {
 
-    private val packageName: String = App.instance.packageName
+    private val packageName: String by lazy { App.instance.packageName }
 
     /**
      * Saves int to SharedPreferences
@@ -21,7 +21,7 @@ object MySharedPreferencesUtil {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putInt(key, value)
-        editor.commit()
+        editor.apply()
     }
 
     /**
@@ -43,7 +43,7 @@ object MySharedPreferencesUtil {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putString(key, value.toString())
-        editor.commit()
+        editor.apply()
     }
 
     /**
@@ -65,7 +65,7 @@ object MySharedPreferencesUtil {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putString(key, value)
-        editor.commit()
+        editor.apply()
     }
 
     /**
@@ -87,7 +87,7 @@ object MySharedPreferencesUtil {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putBoolean(key, value)
-        editor.commit()
+        editor.apply()
     }
 
     /**
@@ -108,7 +108,7 @@ object MySharedPreferencesUtil {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.remove(key)
-        editor.commit()
+        editor.apply()
     }
 
     /**
@@ -130,7 +130,7 @@ object MySharedPreferencesUtil {
         val sharedPreferences = getSharedPreferences(context)
         val editor = sharedPreferences.edit()
         editor.putStringSet(key, value)
-        editor.commit()
+        editor.apply()
     }
 
     /**
