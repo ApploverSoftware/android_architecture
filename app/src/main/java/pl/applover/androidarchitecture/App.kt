@@ -17,7 +17,7 @@ class App : Application(), HasDispatchingActivityInjector {
 
     @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
     @Inject @field:Named("example")
-    lateinit var retrofit: Retrofit
+    lateinit var exampleRetrofit: Retrofit
 
     override fun onCreate() {
         super.onCreate()
@@ -36,5 +36,7 @@ class App : Application(), HasDispatchingActivityInjector {
 
     companion object {
         var instance: App by DelegatesExt.notNullSingleValue()
+
+        fun getExampleRetrofit(): Retrofit = instance.exampleRetrofit
     }
 }
