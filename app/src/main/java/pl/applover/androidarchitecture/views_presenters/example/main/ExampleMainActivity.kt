@@ -20,7 +20,6 @@ class ExampleMainActivity : MvpActivity<ExampleMainActivityContract.Presenter, E
     }
 
     override fun onResponseSuccess() {
-        println("OnResponseSuccess")
         ExampleDialogFragment.newInstance("Response success, yeah!", true).show(supportFragmentManager, "DialogSuccess")
     }
 

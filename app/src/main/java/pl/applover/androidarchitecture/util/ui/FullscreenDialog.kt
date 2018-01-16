@@ -16,10 +16,4 @@ abstract class FullscreenDialog : DialogFragment() {
         setStyle(R.style.FullscreenDialog, R.style.FullscreenDialog)
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window.navigationBarColor = Color.TRANSPARENT
-    }
 }
