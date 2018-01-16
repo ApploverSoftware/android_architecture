@@ -9,6 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -16,7 +17,9 @@ class ExampleNetModule {
     internal var webServiceUrl = "https://jsonplaceholder.typicode.com/"
     private val timeoutInSec = 10
 
+
     @Provides
+    @Named("example")
     @Singleton
     internal fun provideRetrofit(): Retrofit {
         val logging = HttpLoggingInterceptor()

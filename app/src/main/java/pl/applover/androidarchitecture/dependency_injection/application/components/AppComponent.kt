@@ -7,6 +7,7 @@ import pl.applover.androidarchitecture.dependency_injection.application.modules.
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
+import pl.applover.androidarchitecture.dependency_injection.internet.example.ExampleNetModule
 import javax.inject.Singleton
 
 /**
@@ -17,6 +18,7 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ActivitiesInjectorFactories::class,
         FragmentsInjectorFactories::class,
+        ExampleNetModule::class,
         AppModule::class
 ))
 interface AppComponent {

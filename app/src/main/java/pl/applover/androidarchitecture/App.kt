@@ -5,11 +5,10 @@ import android.app.Application
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasDispatchingActivityInjector
 import pl.applover.androidarchitecture.dependency_injection.application.components.DaggerAppComponent
-import pl.applover.androidarchitecture.dependency_injection.internet.example.DaggerExampleNetComponent
-import pl.applover.androidarchitecture.dependency_injection.internet.example.ExampleNetComponent
-import pl.applover.androidarchitecture.dependency_injection.internet.example.ExampleNetModule
 import pl.applover.androidarchitecture.util.extensions.DelegatesExt
+import retrofit2.Retrofit
 import javax.inject.Inject
+import javax.inject.Named
 
 /**
  * Created by Janusz Hain on 2018-01-08.
@@ -17,12 +16,8 @@ import javax.inject.Inject
 class App : Application(), HasDispatchingActivityInjector {
 
     @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-
-    val netLoginComponent: ExampleNetComponent by lazy {
-        DaggerExampleNetComponent.builder()
-                .exampleNetModule(ExampleNetModule())
-                .build();
-    }
+    @Inject @field:Named("example")
+    lateinit var retrofit: Retrofit
 
     override fun onCreate() {
         super.onCreate()
