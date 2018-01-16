@@ -1,6 +1,9 @@
 package pl.applover.androidarchitecture.util.extensions
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
@@ -23,4 +26,23 @@ fun getString(resId: Int, context: Context = App.instance) = context.getString(r
 
 fun TimeUnit.delayed(delay: Long, closure: () -> Unit) {
     Handler(Looper.getMainLooper()).postDelayed(closure, this.toMillis(delay))
+}
+
+infix fun Int.with(x: Int) = this.or(x)
+
+fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveActivityOnBackstack: Boolean = true) {
+    val intent = Intent(this, className).apply {
+        bundle?.let {
+            putExtras(it)
+        }
+    }
+
+    if (!saveActivityOnBackstack) {
+        intent.flags = intent.flags with Intent.FLAG_ACTIVITY_NO_HISTORY
+    }
+
+    startActivity(intent)
+}
+
+fun Activity.showFragment() {
 }
