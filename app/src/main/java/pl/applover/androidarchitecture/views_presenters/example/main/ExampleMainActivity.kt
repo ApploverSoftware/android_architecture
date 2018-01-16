@@ -2,10 +2,8 @@ package pl.applover.androidarchitecture.views_presenters.example.main
 
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.view.View
-import pl.applover.androidarchitecture.R
 import com.stfalcon.mvphelper.MvpActivity
-import pl.applover.androidarchitecture.App
+import pl.applover.androidarchitecture.R
 import pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment.ExampleDialogFragment
 
 /**

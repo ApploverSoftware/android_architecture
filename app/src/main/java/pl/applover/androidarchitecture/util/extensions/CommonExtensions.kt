@@ -6,6 +6,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import pl.applover.androidarchitecture.App
 import java.util.concurrent.TimeUnit
@@ -30,7 +33,7 @@ fun TimeUnit.delayed(delay: Long, closure: () -> Unit) {
 
 infix fun Int.with(x: Int) = this.or(x)
 
-fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveActivityOnBackstack: Boolean = true) {
+private fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveActivityOnBackstack: Boolean = true) {
     val intent = Intent(this, className).apply {
         bundle?.let {
             putExtras(it)
@@ -44,5 +47,31 @@ fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveA
     startActivity(intent)
 }
 
-fun Activity.showFragment() {
+private fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = null, animOut: Int? = null, tag: String? = null) {
+    supportFragmentManager.beginTransaction()
+            .addToBackStack(tag)
+            .setCustomAnimations(
+                    animIn ?: 0,
+                    animOut ?: 0)
+            .replace(into, fragment)
+            .commit()
+}
+
+fun <T : Fragment> FragmentManager.onStackTop(closure: T.() -> Unit, onFailure: (() -> Unit)? = null) {
+    (peekBackStack() as? T)?.closure() ?: onFailure?.invoke()
+}
+
+fun FragmentManager.peekBackStack() {
+    getBackStackEntryAt(backStackEntryCount - 1).name?.let {
+        findFragmentByTag(it)
+    }
+}
+
+
+fun FragmentManager.clearBackstack() {
+    if (backStackEntryCount > 0) {
+        val entry = getBackStackEntryAt(0)
+        popBackStack(entry.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        executePendingTransactions()
+    }
 }
