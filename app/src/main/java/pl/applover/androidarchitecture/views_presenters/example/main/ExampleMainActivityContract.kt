@@ -8,10 +8,11 @@ import com.stfalcon.mvphelper.IPresenter
 interface ExampleMainActivityContract {
 
     interface View {
-
+        fun onResponseSuccess()
+        fun onResponseFailure()
     }
 
     interface Presenter : IPresenter<View> {
-
+        fun onViewCreated()
     }
 }

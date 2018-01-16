@@ -14,15 +14,27 @@ import retrofit2.Retrofit
 /**
  * Created by Janusz Hain on 2018-01-10.
  */
-class ExampleInteractor(val retrofit: Retrofit) {
+class ExampleInteractor(private val retrofit: Retrofit) {
 
     private var disposable: Disposable? = null
 
-    fun execute(onSuccess: (exampleModel: ExampleModel) -> Unit, onFailure: () -> Unit, exampleHeaders: ExampleHeaders, exampleParams: ExampleParams) {
-        disposable = getObservable(retrofit, exampleHeaders, exampleParams).subscribe();
+    fun execute(onSuccess: (exampleModel: ArrayList<ExampleModel>) -> Unit, onFailure: () -> Unit, exampleHeaders: ExampleHeaders, exampleParams: ExampleParams) {
+        disposable = getObservable(retrofit, exampleHeaders, exampleParams).subscribe({
+            if (it.isSuccessful) {
+                it.body()?.let {
+                    onSuccess(ArrayList(it.map { ExampleModel(it) }))
+                } ?: run {
+                    onSuccess(ArrayList())
+                }
+            } else {
+                onFailure()
+            }
+        }, {
+            onFailure()
+        })
     }
 
-    private fun unsubscribe() {
+    fun unsubscribe() {
         disposable?.dispose()
     }
 
