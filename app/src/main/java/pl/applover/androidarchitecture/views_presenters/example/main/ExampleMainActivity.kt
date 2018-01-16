@@ -14,12 +14,13 @@ class ExampleMainActivity : MvpActivity<ExampleMainActivityContract.Presenter, E
 
     override fun getLayoutResId(): Int = R.layout.activity_main
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onStart() {//note that presenter is injected AFTER onCreate!!!
+        super.onStart()
         presenter?.onViewCreated()
     }
 
     override fun onResponseSuccess() {
+        println("OnResponseSuccess")
         ExampleDialogFragment.newInstance("Response success, yeah!", true).show(supportFragmentManager, "DialogSuccess")
     }
 

@@ -33,7 +33,7 @@ fun TimeUnit.delayed(delay: Long, closure: () -> Unit) {
 
 infix fun Int.with(x: Int) = this.or(x)
 
-private fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveActivityOnBackstack: Boolean = true) {
+fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveActivityOnBackstack: Boolean = true) {
     val intent = Intent(this, className).apply {
         bundle?.let {
             putExtras(it)
@@ -47,7 +47,7 @@ private fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = nul
     startActivity(intent)
 }
 
-private fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = null, animOut: Int? = null, tag: String? = null) {
+fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = null, animOut: Int? = null, tag: String? = null) {
     supportFragmentManager.beginTransaction()
             .addToBackStack(tag)
             .setCustomAnimations(
