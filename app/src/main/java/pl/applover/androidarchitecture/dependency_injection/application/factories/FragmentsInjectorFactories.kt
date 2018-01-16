@@ -9,6 +9,8 @@ import dagger.android.AndroidInjector
 import dagger.android.support.FragmentKey
 
 import dagger.multibindings.IntoMap
+import pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment.ExampleDialogFragment
+import pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment.ExampleDialogFragmentSubComponent
 import pl.applover.androidarchitecture.views_presenters.start.start_fragment.StartFragment
 import pl.applover.androidarchitecture.views_presenters.start.start_fragment.StartFragmentSubComponent
 
@@ -18,7 +20,8 @@ import pl.applover.androidarchitecture.views_presenters.start.start_fragment.Sta
  */
 @Module(subcomponents = arrayOf(
 //TODO        register your fragments' subcomponents here
-        StartFragmentSubComponent::class
+        StartFragmentSubComponent::class,
+        ExampleDialogFragmentSubComponent::class
 
 ))
 abstract class FragmentsInjectorFactories {
@@ -29,5 +32,11 @@ abstract class FragmentsInjectorFactories {
     @IntoMap
     @FragmentKey(StartFragment::class)
     internal abstract fun bindStartFragmentInjectorFactory(builder: StartFragmentSubComponent.Builder):
+            AndroidInjector.Factory<out Fragment>
+
+    @Binds
+    @IntoMap
+    @FragmentKey(ExampleDialogFragment::class)
+    internal abstract fun bindExampleDialogFragmentInjectorFactory(builder: ExampleDialogFragmentSubComponent.Builder):
             AndroidInjector.Factory<out Fragment>
 }
