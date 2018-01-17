@@ -1,6 +1,10 @@
 MVP architecture for Kotlin project with Dependency Injection and Interactors
 
-Using: https://plugins.jetbrains.com/plugin/9760-mvp-generator 
+Plugin for generating MVP: 
+https://plugins.jetbrains.com/plugin/9760-mvp-generator 
+
+Plugin for generating kotlin classes from JSON:
+https://github.com/wuseal/JsonToKotlinClass
 
 When generating Activity using MVP Generator:
 1. From class ActivityNameSubComponent cut ActivityName.class and paste it in array of subcomponents in AppModule
