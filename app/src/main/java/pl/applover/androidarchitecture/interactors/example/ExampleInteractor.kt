@@ -1,6 +1,7 @@
 package pl.applover.androidarchitecture.interactors.example
 
 import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.disposables.Disposable
 import pl.applover.androidarchitecture.data.example.internet.api_endpoints.ExampleApiEndpointsInterface
 import pl.applover.androidarchitecture.data.example.internet.headers.ExampleHeaders
@@ -19,7 +20,7 @@ class ExampleInteractor(private val retrofit: Retrofit) {
     private var disposable: Disposable? = null
 
     fun execute(onSuccess: (exampleModel: ArrayList<ExampleModel>) -> Unit, onFailure: () -> Unit, exampleHeaders: ExampleHeaders, exampleParams: ExampleParams) {
-        disposable = getObservable(retrofit, exampleHeaders, exampleParams).subscribe({
+        disposable = getSingle(retrofit, exampleHeaders, exampleParams).subscribe({
             if (it.isSuccessful) {
                 it.body()?.let {
                     onSuccess(ArrayList(it.map { ExampleModel(it) }))
@@ -39,7 +40,7 @@ class ExampleInteractor(private val retrofit: Retrofit) {
     }
 
     companion object {
-        fun getObservable(retrofit: Retrofit, exampleHeaders: ExampleHeaders, exampleParams: ExampleParams): Observable<Response<List<ExampleResponse>>> {
+        fun getSingle(retrofit: Retrofit, exampleHeaders: ExampleHeaders, exampleParams: ExampleParams): Single<Response<List<ExampleResponse>>> {
             val api = retrofit.create<ExampleApiEndpointsInterface>(ExampleApiEndpointsInterface::class.java)
 
             return api.getExampleList(exampleHeaders.contentType, exampleParams.userId)

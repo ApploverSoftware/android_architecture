@@ -1,6 +1,6 @@
 package pl.applover.androidarchitecture.data.example.internet.api_endpoints
 
-import io.reactivex.Observable
+import io.reactivex.Single
 import pl.applover.androidarchitecture.data.example.internet.response.ExampleResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -21,7 +21,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Login") login: String,
             @Header("Device") device: String,
             @Body jsonBody: String
-    ): Observable<Response<ResponseBackendEvent>>
+    ): Single<Response<ResponseBackendEvent>>
 
     @HTTP(method = "DELETE", path = "/api/v1/events", hasBody = true)
     abstract fun deleteEvent(
@@ -30,7 +30,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Login") login: String,
             @Header("Device") device: String,
             @Body jsonBody: String
-    ): Observable<Response<Void>>
+    ): Single<Response<Void>>
 
     @GET("/api/v1/events")
     abstract fun getEvents(
@@ -38,7 +38,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Authorization") authorization: String,
             @Header("Login") login: String,
             @Header("Device") device: String
-    ): Observable<Response<List<ResponseBackendEvent>>>
+    ): Single<Response<List<ResponseBackendEvent>>>
     */
 
 
@@ -46,5 +46,5 @@ interface ExampleApiEndpointsInterface {
     fun getExampleList(
             @Header("Content-Type") contentType: String = "application/json",
             @Query("userId") userId: String
-    ): Observable<Response<List<ExampleResponse>>>
+    ): Single<Response<List<ExampleResponse>>>
 }
