@@ -5,6 +5,13 @@ package pl.applover.androidarchitecture.data.internet.params
  */
 interface Params {
 
-    fun createJsonString(): String
+    /**
+     * If you need json string then:
+     * Generate classes using JsonToKotlinClass:
+     * 1. Code
+     * 2. Generate
+     * 3. Convert Json into Kotlin
+     */
+    fun createJsonString(): String? = null
 
 }

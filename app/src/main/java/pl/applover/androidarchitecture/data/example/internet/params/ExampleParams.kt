@@ -7,7 +7,4 @@ import pl.applover.androidarchitecture.data.internet.params.Params
 /**
  * Created by Janusz Hain on 2018-01-12.
  */
-class ExampleParams(val userId: String) : Params {
-
-    override fun createJsonString(): String = ""
-}
+class ExampleParams(val userId: String) : Params
