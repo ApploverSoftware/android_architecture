@@ -25,3 +25,6 @@ Usable tools:
 - https://www.hurl.it/ - making calls using curl without curling on the computer!
 - http://nsdateformatter.com/ - date formatter
 - https://convertcase.net/ - String formatter
+
+Rename package name!
+Example: https://stackoverflow.com/questions/16804093/android-studio-rename-package
