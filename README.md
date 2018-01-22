@@ -28,3 +28,5 @@ Usable tools:
 
 Rename package name!
 Example: https://stackoverflow.com/questions/16804093/android-studio-rename-package
+
+Right click on package, refactor and then rename. Manifest and gradle files will change along with refactor
