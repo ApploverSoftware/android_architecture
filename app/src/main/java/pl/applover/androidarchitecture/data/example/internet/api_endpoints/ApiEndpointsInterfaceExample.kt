@@ -44,7 +44,7 @@ interface ApiEndpointsInterfaceExample {
 
     @GET("/posts")
     fun getExampleList(
-            @Header("Content-Type") contentType: String = "application/json",
-            @Query("userId") userId: String
+            @Query("userId") userId: String,
+            @Header("Content-Type") contentType: String = "application/json"
     ): Single<Response<List<ExampleResponse>>>
 }

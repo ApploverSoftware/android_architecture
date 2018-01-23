@@ -42,7 +42,7 @@ class InteractorExample(private val retrofit: Retrofit) {
         fun getSingle(retrofit: Retrofit, headersExample: HeadersExample, paramsExample: ParamsExample): Single<Response<List<ExampleResponse>>> {
             val api = retrofit.create<ApiEndpointsInterfaceExample>(ApiEndpointsInterfaceExample::class.java)
 
-            return api.getExampleList(headersExample.contentType, paramsExample.userId)
+            return api.getExampleList(paramsExample.userId, headersExample.contentType) //it can be api.getExampleList(paramsExample.userId) too as we got default value set in getExampleList
                     .observeOn(MyScheduler.getMainThreadScheduler())
                     .subscribeOn(MyScheduler.getScheduler())
         }
