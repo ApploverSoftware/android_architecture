@@ -1,7 +1,5 @@
 package pl.applover.androidarchitecture.views_presenters.example.main
 
-import android.os.Bundle
-import android.os.PersistableBundle
 import com.stfalcon.mvphelper.MvpActivity
 import pl.applover.androidarchitecture.R
 import pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment.ExampleDialogFragment
@@ -12,7 +10,7 @@ import pl.applover.androidarchitecture.views_presenters.example.main.dialog_frag
 class ExampleMainActivity : MvpActivity<ExampleMainActivityContract.Presenter, ExampleMainActivityContract.View>(),
         ExampleMainActivityContract.View {
 
-    override fun getLayoutResId(): Int = R.layout.activity_main
+    override fun getLayoutResId(): Int = R.layout.activity_example_main
 
     override fun onStart() {//note that presenter is injected AFTER onCreate!!!
         super.onStart()
