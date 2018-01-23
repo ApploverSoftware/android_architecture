@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.widget.Toast
@@ -27,6 +28,8 @@ fun showToast(text: String, isLong: Boolean = true, context: Context = App.insta
 }
 
 fun getString(resId: Int, context: Context = App.instance) = context.getString(resId)
+
+fun getColor(resId: Int, context: Context = App.instance) = ContextCompat.getColor(context, resId)
 
 fun TimeUnit.delayed(delay: Long, closure: () -> Unit) {
     Handler(Looper.getMainLooper()).postDelayed(closure, this.toMillis(delay))
@@ -49,7 +52,7 @@ fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveA
 }
 
 fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = android.R.anim.fade_in, animOut: Int? = android.R.anim.fade_out, tag: String? = null) {
-    if(push) {
+    if (push) {
         supportFragmentManager.beginTransaction()
                 .addToBackStack(tag)
                 .setCustomAnimations(
@@ -57,8 +60,7 @@ fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean 
                         animOut ?: 0)
                 .replace(into, fragment)
                 .commit()
-    }
-    else{
+    } else {
         supportFragmentManager.beginTransaction()
                 .setCustomAnimations(
                         animIn ?: 0,
