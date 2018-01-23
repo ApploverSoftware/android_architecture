@@ -1,6 +1,7 @@
 package pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment
 
 import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -17,6 +18,7 @@ class ExampleDialogFragment : MvpFullscreenDialogFragment<ExampleDialogFragmentC
 
     private lateinit var message: String
     private var isSuccess: Boolean = false
+    private lateinit var mListener: FragmentInteraction
 
     //remember to use after view creation! Before view is null and it will throw an Exception
     private val textViewMessage by lazy {
@@ -29,6 +31,15 @@ class ExampleDialogFragment : MvpFullscreenDialogFragment<ExampleDialogFragmentC
 
     private val buttonComplete by lazy {
         view!!.findViewById(R.id.buttonComplete) as Button
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        if (context is FragmentInteraction) {
+            mListener = context
+        } else {
+            throw RuntimeException(context!!.toString() + " must implement ${FragmentInteraction::class.java.name}")
+        }
     }
 
     companion object {
@@ -75,6 +86,10 @@ class ExampleDialogFragment : MvpFullscreenDialogFragment<ExampleDialogFragmentC
     }
 
     override fun getLayoutResId(): Int = R.layout.fragment_example_dialog
+
+    interface FragmentInteraction{
+        fun exampleMainActivityWithFragmentInteraction()
+    }
 
 
 }

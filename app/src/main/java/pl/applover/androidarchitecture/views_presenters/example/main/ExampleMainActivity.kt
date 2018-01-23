@@ -1,5 +1,6 @@
 package pl.applover.androidarchitecture.views_presenters.example.main
 
+import android.annotation.SuppressLint
 import com.stfalcon.mvphelper.MvpActivity
 import pl.applover.androidarchitecture.R
 import pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment.ExampleDialogFragment
@@ -8,11 +9,13 @@ import pl.applover.androidarchitecture.views_presenters.example.main.dialog_frag
  * Created by Janusz Hain on 2018-01-08.
  */
 class ExampleMainActivity : MvpActivity<ExampleMainActivityContract.Presenter, ExampleMainActivityContract.View>(),
-        ExampleMainActivityContract.View {
+        ExampleMainActivityContract.View, ExampleMainFragmentInteractions {
+
 
     override fun getLayoutResId(): Int = R.layout.activity_example_main
 
-    override fun onStart() {//note that presenter is injected AFTER onCreate!!!
+    @SuppressLint("MissingSuperCall") //I am not sure why, but IDE shows the problem here, but I call super
+    override fun onStart() {//note that presenter is injected AFTER onCreate, so use onStart
         super.onStart()
         presenter?.onViewCreated()
     }
@@ -24,5 +27,10 @@ class ExampleMainActivity : MvpActivity<ExampleMainActivityContract.Presenter, E
     override fun onResponseFailure() {
         ExampleDialogFragment.newInstance("Response failure :(", false).show(supportFragmentManager, "DialogFailure")
     }
+
+    override fun exampleMainActivityWithFragmentInteraction() {
+
+    }
+
 
 }
