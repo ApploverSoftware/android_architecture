@@ -11,7 +11,7 @@ import retrofit2.http.Query
  * Created by Janusz Hain on 2018-01-12.
  */
 
-interface ExampleApiEndpointsInterface {
+interface ApiEndpointsInterfaceExample {
 
     /*
     @POST("/api/v1/events")

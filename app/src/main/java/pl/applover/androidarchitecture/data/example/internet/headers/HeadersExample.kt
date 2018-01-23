@@ -8,4 +8,4 @@ package pl.applover.androidarchitecture.data.example.internet.headers
  * then we can create default variable in API call and don't pass anything there.
  * I used this only to demonstrate how we can store data for headers
  */
-data class ExampleHeaders(val contentType: String = "application/json")
+data class HeadersExample(val contentType: String = "application/json")

@@ -2,10 +2,9 @@ package pl.applover.androidarchitecture.views_presenters.example.main
 
 import com.stfalcon.mvphelper.Presenter
 import pl.applover.androidarchitecture.App
-import pl.applover.androidarchitecture.data.example.internet.headers.ExampleHeaders
-import pl.applover.androidarchitecture.data.example.internet.params.ExampleParams
-import pl.applover.androidarchitecture.interactors.example.ExampleInteractor
-import pl.applover.androidarchitecture.views_presenters.example.main.dialog_fragment.ExampleDialogFragmentContract
+import pl.applover.androidarchitecture.data.example.internet.headers.HeadersExample
+import pl.applover.androidarchitecture.data.example.internet.params.ParamsExample
+import pl.applover.androidarchitecture.interactors.example.InteractorExample
 import javax.inject.Inject
 
 /**
@@ -15,7 +14,7 @@ class ExampleMainActivityPresenter @Inject constructor()
     : Presenter<ExampleMainActivityContract.View>(), ExampleMainActivityContract.Presenter {
 
     private val exampleInteractor by lazy {
-        ExampleInteractor(App.getExampleRetrofit())
+        InteractorExample(App.getExampleRetrofit())
     }
 
     override fun onViewAttached(view: ExampleMainActivityContract.View, created: Boolean) {
@@ -37,6 +36,6 @@ class ExampleMainActivityPresenter @Inject constructor()
             view?.onResponseFailure()
         }, onSuccess = {
             view?.onResponseSuccess()
-        }, exampleHeaders = ExampleHeaders(), exampleParams = ExampleParams("1") )
+        }, headersExample = HeadersExample(), paramsExample = ParamsExample("1") )
     }
 }

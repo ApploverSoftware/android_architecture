@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 /**
  * Created by Janusz Hain on 2018-01-12.
  */
-data class ExampleParamsEvent(val paramsBody: ParamsBody) {
+data class ParamsExampleEvent(val paramsBody: ParamsBody) {
 
     /**
      * If you need json body in request then:
