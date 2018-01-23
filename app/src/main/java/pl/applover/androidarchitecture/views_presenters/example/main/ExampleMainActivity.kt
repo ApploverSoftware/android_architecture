@@ -24,8 +24,14 @@ class ExampleMainActivity : MvpActivity<ExampleMainActivityContract.Presenter, E
         ExampleDialogFragment.newInstance("Response success, yeah!", true).show(supportFragmentManager, "DialogSuccess")
     }
 
-    override fun onResponseFailure() {
-        ExampleDialogFragment.newInstance("Response failure :(", false).show(supportFragmentManager, "DialogFailure")
+    override fun onResponseFailure(code: Int?) {
+        val message =
+                when (code) {
+                    400 -> "Response failure, code 400 :("
+                    401 -> "Response failure, code 401 :("
+                    else -> "Response failure :("
+                }
+        ExampleDialogFragment.newInstance(message, false).show(supportFragmentManager, "DialogFailure")
     }
 
     override fun exampleMainActivityWithFragmentInteraction() {

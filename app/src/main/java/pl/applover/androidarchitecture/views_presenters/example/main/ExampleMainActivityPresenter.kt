@@ -32,8 +32,8 @@ class ExampleMainActivityPresenter @Inject constructor()
     }
 
     override fun onViewCreated() {
-        exampleInteractor.execute(onFailure = {
-            view?.onResponseFailure()
+        exampleInteractor.execute(onFailure = {code: Int? ->
+            view?.onResponseFailure(code)
         }, onSuccess = {
             view?.onResponseSuccess()
         }, headersExample = HeadersExample(), paramsExample = ParamsExample("1") )

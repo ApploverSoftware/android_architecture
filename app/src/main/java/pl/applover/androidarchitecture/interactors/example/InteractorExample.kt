@@ -18,7 +18,7 @@ class InteractorExample(private val retrofit: Retrofit) {
 
     private var disposable: Disposable? = null
 
-    fun execute(onSuccess: (exampleModel: ArrayList<ExampleModel>) -> Unit, onFailure: () -> Unit, headersExample: HeadersExample, paramsExample: ParamsExample) {
+    fun execute(onSuccess: (exampleModel: ArrayList<ExampleModel>) -> Unit, onFailure: (code: Int?) -> Unit, headersExample: HeadersExample, paramsExample: ParamsExample) {
         disposable = getSingle(retrofit, headersExample, paramsExample).subscribe({
             if (it.isSuccessful) {
                 it.body()?.let {
@@ -27,10 +27,10 @@ class InteractorExample(private val retrofit: Retrofit) {
                     onSuccess(ArrayList())
                 }
             } else {
-                onFailure()
+                onFailure(it.code())
             }
         }, {
-            onFailure()
+            onFailure(null)
         })
     }
 
