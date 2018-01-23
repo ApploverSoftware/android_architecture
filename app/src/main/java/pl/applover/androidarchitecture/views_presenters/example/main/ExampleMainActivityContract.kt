@@ -9,7 +9,7 @@ interface ExampleMainActivityContract {
 
     interface View {
         fun onResponseSuccess()
-        fun onResponseFailure()
+        fun onResponseFailure(code: Int?)
     }
 
     interface Presenter : IPresenter<View> {

@@ -11,7 +11,7 @@ import retrofit2.http.Query
  * Created by Janusz Hain on 2018-01-12.
  */
 
-interface ExampleApiEndpointsInterface {
+interface ApiEndpointsInterfaceExample {
 
     /*
     @POST("/api/v1/events")
@@ -20,7 +20,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Authorization") authorization: String,
             @Header("Login") login: String,
             @Header("Device") device: String,
-            @Body jsonBody: String
+            @Body jsonBody: ExampleParamsEvent.ParamsBody
     ): Single<Response<ResponseBackendEvent>>
 
     @HTTP(method = "DELETE", path = "/api/v1/events", hasBody = true)
@@ -29,7 +29,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Authorization") authorization: String,
             @Header("Login") login: String,
             @Header("Device") device: String,
-            @Body jsonBody: String
+            @Body jsonBody: ExampleParamsEvent.ParamsBody
     ): Single<Response<Void>>
 
     @GET("/api/v1/events")
@@ -44,7 +44,7 @@ interface ExampleApiEndpointsInterface {
 
     @GET("/posts")
     fun getExampleList(
-            @Header("Content-Type") contentType: String = "application/json",
-            @Query("userId") userId: String
+            @Query("userId") userId: String,
+            @Header("Content-Type") contentType: String = "application/json"
     ): Single<Response<List<ExampleResponse>>>
 }

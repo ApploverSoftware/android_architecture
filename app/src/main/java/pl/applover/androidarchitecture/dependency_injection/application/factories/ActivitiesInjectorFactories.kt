@@ -28,6 +28,6 @@ abstract class ActivitiesInjectorFactories {
     @Binds
     @IntoMap
     @ActivityKey(ExampleMainActivity::class)
-    internal abstract fun bindMainActivityInjectorFactory(
+    internal abstract fun bindExampleMainActivityInjectorFactory(
             builder: ExampleMainActivitySubComponent.Builder): AndroidInjector.Factory<out Activity>
 }
