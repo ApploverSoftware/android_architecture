@@ -48,7 +48,7 @@ fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveA
     startActivity(intent)
 }
 
-fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = null, animOut: Int? = null, tag: String? = null) {
+fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = android.R.anim.fade_in, animOut: Int? = android.R.anim.fade_out, tag: String? = null) {
     supportFragmentManager.beginTransaction()
             .addToBackStack(tag)
             .setCustomAnimations(
