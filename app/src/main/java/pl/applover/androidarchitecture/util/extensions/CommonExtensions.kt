@@ -87,6 +87,6 @@ fun FragmentManager.clearBackstack() {
     }
 }
 
-fun isValidEmail(target: CharSequence): Boolean {
+fun isEmailValid(target: CharSequence): Boolean {
     return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches()
 }
