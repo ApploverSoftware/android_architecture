@@ -49,13 +49,23 @@ fun <T> Activity.goToActivity(className: Class<T>, bundle: Bundle? = null, saveA
 }
 
 fun AppCompatActivity.showFragment(fragment: Fragment, into: Int, push: Boolean = true, animIn: Int? = android.R.anim.fade_in, animOut: Int? = android.R.anim.fade_out, tag: String? = null) {
-    supportFragmentManager.beginTransaction()
-            .addToBackStack(tag)
-            .setCustomAnimations(
-                    animIn ?: 0,
-                    animOut ?: 0)
-            .replace(into, fragment)
-            .commit()
+    if(push) {
+        supportFragmentManager.beginTransaction()
+                .addToBackStack(tag)
+                .setCustomAnimations(
+                        animIn ?: 0,
+                        animOut ?: 0)
+                .replace(into, fragment)
+                .commit()
+    }
+    else{
+        supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                        animIn ?: 0,
+                        animOut ?: 0)
+                .replace(into, fragment)
+                .commit()
+    }
 }
 
 fun <T : Fragment> FragmentManager.onStackTop(closure: T.() -> Unit, onFailure: (() -> Unit)? = null) {
