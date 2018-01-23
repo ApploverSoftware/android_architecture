@@ -20,7 +20,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Authorization") authorization: String,
             @Header("Login") login: String,
             @Header("Device") device: String,
-            @Body jsonBody: String
+            @Body jsonBody: ExampleParamsEvent.ParamsBody
     ): Single<Response<ResponseBackendEvent>>
 
     @HTTP(method = "DELETE", path = "/api/v1/events", hasBody = true)
@@ -29,7 +29,7 @@ interface ExampleApiEndpointsInterface {
             @Header("Authorization") authorization: String,
             @Header("Login") login: String,
             @Header("Device") device: String,
-            @Body jsonBody: String
+            @Body jsonBody: ExampleParamsEvent.ParamsBody
     ): Single<Response<Void>>
 
     @GET("/api/v1/events")
