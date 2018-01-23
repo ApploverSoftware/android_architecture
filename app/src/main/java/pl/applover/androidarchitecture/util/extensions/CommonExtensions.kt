@@ -9,6 +9,7 @@ import android.os.Looper
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
+import android.text.TextUtils
 import android.widget.Toast
 import pl.applover.androidarchitecture.App
 import java.util.concurrent.TimeUnit
@@ -74,4 +75,8 @@ fun FragmentManager.clearBackstack() {
         popBackStack(entry.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         executePendingTransactions()
     }
+}
+
+fun isValidEmail(target: CharSequence): Boolean {
+    return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches()
 }
