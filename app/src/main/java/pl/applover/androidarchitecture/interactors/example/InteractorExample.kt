@@ -8,6 +8,7 @@ import pl.applover.androidarchitecture.data.example.internet.params.ParamsExampl
 import pl.applover.androidarchitecture.data.example.internet.response.ExampleResponse
 import pl.applover.androidarchitecture.models.example.ExampleModel
 import pl.applover.androidarchitecture.util.MyScheduler
+import pl.applover.androidarchitecture.util.extensions.printError
 import retrofit2.Response
 import retrofit2.Retrofit
 
@@ -30,6 +31,8 @@ class InteractorExample(private val retrofit: Retrofit) {
                 onFailure(it.code())
             }
         }, {
+            throwable ->
+            printError(this, throwable)
             onFailure(null)
         })
     }

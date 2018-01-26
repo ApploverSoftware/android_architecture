@@ -18,3 +18,9 @@ fun SpannableString.setClickableSpannable(clickableSpan: ClickableSpan, text: St
 
     setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 }
+
+inline fun <reified T : Any> ArrayList<T>.print(): String {
+    var arrayString = "ArrayList<${T::class.java.simpleName}> Number of items: $size\n"
+    forEachIndexed { index: Int, e: T -> arrayString += "$index : [${e.toString()}]\n" }
+    return arrayString
+}
