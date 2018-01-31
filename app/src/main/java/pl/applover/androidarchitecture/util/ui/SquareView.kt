@@ -31,7 +31,7 @@ class SquareView : ViewGroup {
         val height = resolveSize(child.measuredHeight, heightMeasureSpec)
         child.measure(width, height) // 2nd pass with the correct size
 
-        if (width > height) {
+        if (width < height) {
             setMeasuredDimension(width, width)
         } else {
             setMeasuredDimension(height, height)
