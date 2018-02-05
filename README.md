@@ -25,8 +25,8 @@ To create DialogFragment using MVP, create Fragment (as above) and change name o
 Interactors are used to work with database and online sources
 
 Usable tools:
-- http://pojo.sodhanalibrary.com/ - creating pojo from json body
-- https://www.hurl.it/ - making calls using curl without curling on the computer!
+- http://pojo.sodhanalibrary.com/ - creating pojo from json body - not needed if we got right plugin for that
+- https://www.hurl.it/ - making http calls, easy and clean
 - http://nsdateformatter.com/ - date formatter
 - https://convertcase.net/ - String formatter
 
