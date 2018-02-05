@@ -1,3 +1,7 @@
+IMPORTANT!!! READ FIRST!!!
+1. Architecture can be problematic with some libraries as it uses "older" fragments and activities, so newer support library with them will make some of the code not compilable. To do fix it you need to delete import of MVP helper library and copy from that library needed classes and change it to using current Fragments / Activities. It is tmp solution, will work on that soon
+2. Make sure to have gitignore installed before pushing newly created project to git to avoid pushing local config and other unneeded files
+
 MVP architecture for Kotlin project with Dependency Injection and Interactors
 
 Plugin for generating MVP: 
